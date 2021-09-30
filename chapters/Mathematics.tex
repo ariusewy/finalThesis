@@ -1,0 +1,89 @@
+\chapter{数学公式与定理}
+
+\section{符号示例}
+
+Caligraphic letters: $\mathcal{A}$ 
+
+Mathbb letters: $\mathbb{A}$
+
+Mathfrak letters: $\mathfrak{A}$
+
+Math Sans serif letters: $\mathsf{A}$
+
+Math bold letters: $\mathbf{A}$
+
+Math bold italic letters: $\mathbi{A}$
+
+\section{公式示例}
+\begin{equation}\label{eq:dewitt}
+    \int \mathrm{e}^{ax} \tanh {bx} \, \mathrm{d}x =
+    \begin{dcases}
+        \begin{multlined}
+            \frac{\mathrm{e}^{(a+2b)x}}{(a + 2b)} \,
+            {{}_2F_1} \left( 1 + \frac{a}{2b}, 1, 2+\frac{a}{2b}, -\mathrm{e}^{2bx} \right) \\
+            - \frac{1}{a} \mathrm{e}^{ax} \, {{}_2F_1} \left( 1, \frac{a}{2b}, 1 + \frac{a}{2b}, -\mathrm{e}^{2bx} \right)
+        \end{multlined}
+        & a \ne b \\
+    \frac{e^{ax} - 2 \tan^{-1}(\mathrm{e}^{ax})}{a} & a = b
+  \end{dcases}
+\end{equation}
+
+你可以使用\lstinline|equation|环境插入公式，如\cref{eq:dewitt}，代码如下:
+\begin{lstlisting}[style=LaTeX]
+\begin{equation}\label{eq:dewitt}
+    \int \mathrm{e}^{ax} \tanh {bx} \, \mathrm{d}x =
+    \begin{dcases}
+        \begin{multlined}
+            \frac{\mathrm{e}^{(a+2b)x}}{(a + 2b)} \,
+            {{}_2F_1} \left( 1 + \frac{a}{2b}, 1, 2+\frac{a}{2b}, -\mathrm{e}^{2bx} \right) \\
+            - \frac{1}{a} \mathrm{e}^{ax} \, {{}_2F_1} \left( 1, \frac{a}{2b}, 1 + \frac{a}{2b}, -\mathrm{e}^{2bx} \right)
+        \end{multlined}
+        & a \ne b \\
+    \frac{e^{ax} - 2 \tan^{-1}(\mathrm{e}^{ax})}{a} & a = b
+    \end{dcases}
+\end{equation}
+\end{lstlisting}
+
+使用mathtools包会与unicode-math包产生一些命令的冲突，直接引用会输出以下两条警告
+\begin{lstlisting}
+Using \overbracket and \underbracket from `mathtools' package. Use \Uoverbracket and \Uunderbracket for original `unicode-math' definition.
+I'm going to overwrite the following commands from the `mathtools' package: \dblcolon, \coloneqq, \Coloneqq, \eqqcolon.
+\end{lstlisting}
+这些警告已被手动抑制。
+
+\section{定理环境}
+
+\begin{proof}
+    证明我是我
+\end{proof}
+
+\begin{definition}[他人]
+    定义他人即地狱
+\end{definition}
+
+全部数学环境如下所示
+
+\begin{table}[htbp]
+    \caption{数学环境}
+    \label{tab:mathenv}
+    \begin{tabular}{cc}
+        \toprule
+        标签 & 名称 \\
+        \midrule
+        algorithm & 算法 \\
+        assumption & 假设 \\
+        axiom & 公理 \\
+        conclusion & 结论 \\
+        condition & 条件 \\
+        corollary & 推论 \\
+        definition & 定义 \\
+        example & 例 \\ 
+        lemma & 引理 \\
+        proof & 证明 \\
+        property & 性质 \\
+        proposition & 命题 \\
+        remark & 注解 \\
+        theorem & 定理 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
